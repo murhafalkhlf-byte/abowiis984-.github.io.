@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0756d8">
+  <meta name="description" content="الموقع الشخصي لمرهف، أشارك فيه اهتماماتي ومهاراتي ومشاريعي.">
+  <title>مرهف | موقعي الشخصي</title>
+
+  <style>
+    
+/* خلفية احترافية */
+body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 119, 255, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #f8fbff, #eaf3ff, #ffffff);
+    background-attachment: fixed;
+}
+
+/* نقاط ضوئية متحركة */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.35;
+    background-image:
+        radial-gradient(#168cff 1px, transparent 1.5px),
+        radial-gradient(#7abaff 1px, transparent 1.5px);
+    background-size: 55px 55px, 85px 85px;
+    background-position: 0 0, 25px 35px;
+    animation: starsMove 18s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        background-position: 0 0, 25px 35px;
+    }
+    to {
+        background-position: 110px 110px, 195px 205px;
+    }
+}
+
+/* ظهور الأقسام بسلاسة */
+section {
+    animation: sectionAppear 0.8s ease both;
+}
+
+@keyframes sectionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    :root {
+      --blue: #0756d8;
+      --light-blue: #eaf2ff;
+      --white: #ffffff;
+      --text: #14213d;
+      --muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f7faff;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px #163d7010;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+    .hero-content {
+      flex: 1;
+      animation: slideIn .8s ease both;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 30px;
+      color: var(--blue);
+      background: var(--light-blue);
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 58px);
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: .25s;
+      cursor: pointer;
+      border: 0;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 8px 20px #0756d830;
+    }
+
+    .btn-outline {
+      border: 1px solid #c9d8f3;
+      color: var(--blue);
+      background: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 auto 35px;
+      max-width: 560px;
+    }
+
+    .about-box {
+      background: white;
+      padding: 30px;
+      border: 1px solid #e4ecf9;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px #17396808;
+    }
+
+    .about-box p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e4ecf9;
+      border-radius: 20px;
+      padding: 25px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px #17396812;
+    }
+
+    .card-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 15px;
+      background: var(--light-blue);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #0756d8, #347ff1);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+      border-radius: 25px;
+    }
+
+    .contact-box p {
+      margin: 10px auto 24px;
+      color: #e4eeff;
+    }
+
+    .contact-box .btn {
+      background: white;
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 17px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        min-height: auto;
+        padding-top: 45px;
+      }
+
+      .hero-art {
+        flex: none;
+        width: 190px;
+        height: 190px;
+        font-size: 75px;
+      }
+
+      .hero p {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+      
+/* الصورة الشخصية - تصميم فاخر */
+.hero-art {
+    width: 250px;
+    height: 250px;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
+    animation: none;
+    box-shadow: none;
+}
+
+.photo-ring {
+    width: 230px;
+    height: 230px;
+    padding: 6px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #168cff,
+        #0047ab,
+        #ffffff
+    );
+    box-shadow:
+        0 0 15px rgba(0, 119, 255, 0.45),
+        0 0 35px rgba(0, 119, 255, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-ring:hover {
+    transform: scale(1.04);
+    box-shadow:
+        0 0 22px rgba(0, 119, 255, 0.65),
+        0 0 45px rgba(0, 119, 255, 0.28);
+}
+
+.photo-ring img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+@media (max-width: 480px) {
+    .hero-art {
+        width: 210px;
+        height: 210px;
+    }
+
+    .photo-ring {
+        width: 195px;
+        height: 195px;
+    }
+}
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">مرهف.</a>
+
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من أنا</a>
+        <a href="#skills">اهتماماتي</a>
+        <a href="#projects">مشاريعي</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <span class="tag">أهلاً بك في موقعي الشخصي</span>
+
+        <h1>
+          أنا <span>مرهف</span><br>
+          أحب التقنية والإبداع
+        </h1>
+
+        <p>
+          أهلاً وسهلاً بك في مساحتي الخاصة على الإنترنت.
+          هنا أشارك اهتماماتي وأتعلم مهارات جديدة
+          وأعمل على تطوير أفكاري ومشاريعي.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#about">
+            اكتشف المزيد
+          </a>
+
+          <a class="btn btn-outline" href="#contact">
+            تواصل معي
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+  <img src="myphoto.png" alt="صورتي الشخصية">
+</div>
+    </section>
+
+    <section id="about">
+      <div class="container reveal">
+        <h2 class="section-title">من أنا؟</h2>
+
+        <p class="section-desc">
+          تعرّف عليّ وعلى الأشياء التي أحبها.
+        </p>
+
+        <div class="about-box">
+          <p>
+            أنا مرهف، مهتم بالتكنولوجيا والبرمجة وتصميم المواقع.
+            أؤمن أن كل مهارة جديدة هي فرصة لصناعة شيء مميز.
+            هذا الموقع هو بدايتي في عالم تصميم الويب،
+            وسأطوره باستمرار لإضافة أعمالي وأفكاري.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">اهتماماتي</h2>
+
+        <p class="section-desc reveal">
+          مجالات أتعلمها وأطمح إلى تطوير مهاراتي فيها.
+        </p>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-icon">💻</div>
+            <h3>البرمجة</h3>
+            <p>
+              تعلم HTML وCSS وJavaScript
+              وبناء صفحات ويب من الصفر.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🎨</div>
+            <h3>التصميم</h3>
+            <p>
+              إنشاء واجهات جميلة وعصرية
+              تناسب الهواتف وأجهزة الكمبيوتر.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🔐</div>
+            <h3>الأمن السيبراني</h3>
+            <p>
+              تعلم حماية الأجهزة والشبكات
+              ومبادئ الأمن الرقمي بشكل قانوني.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container reveal">
+        <div class="contact-box">
+          <section id="projects">
+  <div class="container">
+    <h2 class="section-title">مشاريعي</h2>
+    <p class="section-desc">
+      أعمالي وتجربتي في عالم البرمجة.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🌐</div>
+        <h3>موقعي الشخصي</h3>
+        <p>أول تجربة لي في تصميم صفحات الويب.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📱</div>
+        <h3>مشروع جديد</h3>
+        <p>سأضيف مشاريعي القادمة هنا.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💡</div>
+        <h3>أفكار مستقبلية</h3>
+        <p>أتعلم وأطوّر أفكاراً جديدة باستمرار.</p>
+      </article>
+    </div>
+  </div>
+</section>
+          <h2>خلينا نتواصل 👋</h2>
+
+          <p>
+            يمكنك إضافة حساباتك وروابط التواصل الخاصة بك هنا.
+          </p>
+
+          <a
+            class="btn"
+            href="https://t.me/abowiis_984"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            افتح تلغرام
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> مرهف — جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <script>
+    // تحديث السنة تلقائياً
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // إظهار الأقسام عند التمرير
+    const items = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      items.forEach(function(item) {
+        observer.observe(item);
+      });
+    } else {
+      items.forEach(function(item) {
+        item.classList.add("show");
+      });
+    }
+  </script>
+
+</body>
+</html>
